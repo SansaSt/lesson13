@@ -13,7 +13,6 @@ const render = function(){ // функция добалвяет дела на с
 
     localStorage.setItem('newTodo', JSON.stringify(todoData)); // Сохранять данные о делах в localStorage
 
-
   todoData.forEach(function(item){ // перебор массива с данными
     const li = document.createElement('li'); // создание элемента
           li.classList.add('todo-item'); // добавление ему класса
