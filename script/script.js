@@ -5,7 +5,12 @@ const todoControl = document.querySelector('.todo-control'),
       todoList = document.querySelector('.todo-list'),
       todoCompleted = document.querySelector('.todo-completed');
 
-const todoData = JSON.parse(localStorage.getItem('newTodo')); // Массив для хранения данных (дел)
+let todoData = [];
+
+const addData = function() {
+      localStorage.Value = JSON.stringify(todoData);
+      };
+       // Массив для хранения данных (дел)
 
 const render = function(){ // функция добалвяет дела на страницу
     todoList.textContent = ''; // присваиваем пустые строки
@@ -48,7 +53,6 @@ const render = function(){ // функция добалвяет дела на с
   });
 
   headerInput.value = ''; // Поле ввода после добавления дела должно очищаться
-
 };
 
 
@@ -70,3 +74,5 @@ todoControl.addEventListener('submit', function(event){
 });
 
 render();
+
+localStorage.clear();
